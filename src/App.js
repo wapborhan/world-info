@@ -11,7 +11,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allcountry: "",
+      allcountry: null,
       country: "",
     };
   }
@@ -49,8 +49,13 @@ export default class App extends Component {
               </Button>
             </Form.Group>
           </Form>
-          <Home data={this.state.allcountry} />
-          <Main data={this.state.country} />
+          {this.state.allcountry ? (
+            <Home data={this.state.allcountry} />
+          ) : (
+            "Countries Not Loading"
+          )}
+
+          {/* <Main data={this.state.country} /> */}
         </div>
         <Footer />
       </Fragment>
