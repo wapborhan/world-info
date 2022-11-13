@@ -11,7 +11,9 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="/">Dark Mode</Nav.Link>
+            <Nav.Link href="/">
+              <span>i</span>Dark Mode
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
