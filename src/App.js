@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./home/Main";
 import Home from "./home/Home";
+import Spinner from "./components/Spinner";
 
 export default class App extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ export default class App extends Component {
           {this.state.allcountry ? (
             <Home data={this.state.allcountry} />
           ) : (
-            "Countries Not Loading"
+            <Spinner />
           )}
 
           {/* <Main data={this.state.country} /> */}

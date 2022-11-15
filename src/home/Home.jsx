@@ -2,13 +2,13 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 
 const Home = (props) => {
-  console.log(props.data);
+  // console.log(props.data);
   return (
     <div className="container">
       <div className="row">
         {props.data.map((item) => {
           return (
-            <div className="col-md-3">
+            <div className="col-md-3" key={Math.random()}>
               <Card
                 style={{ width: "100%", marginTop: "20px" }}
                 className="shadow "
