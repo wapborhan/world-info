@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 
-const Home = (props) => {
+const CountryCard = (props) => {
   // console.log(props.data);
   return (
     <div className="container">
@@ -32,4 +32,4 @@ const Home = (props) => {
   );
 };
 
-export default Home;
+export default CountryCard;
