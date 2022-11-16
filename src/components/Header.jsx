@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar className="shadow header fixed-top" expand="lg">
       <Container>
         <NavLink to="/" className="text-decoration-none">
           <Navbar.Brand>World Info</Navbar.Brand>

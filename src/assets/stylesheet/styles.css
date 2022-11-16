@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,200;1,600&display=swap");
+:root {
+  --darkModeElements: hsl(209, 23%, 22%);
+  --darkModeBackground: hsl(207, 26%, 17%);
+  --lightModeText: hsl(200, 15%, 8%);
+  --lightModeInput: hsl(0, 0%, 52%);
+  --lightModeBackground: hsl(0, 0%, 98%);
+  --darkModeText: hsl(0, 0%, 100%);
+  --lightModeElements: hsl(0, 0%, 100%);
+  --boxShadow: 0 0rem 1rem rgba(0, 0, 0, 0.116);
+}
+body {
+background: var(--lightModeBackground);
+  font-family: "Hind Siliguri", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+}
+body.dark {
+  --lightModeText: var(--darkModeText);
+  --lightModeBackground: var(--darkModeBackground);
+  --lightModeElements: var(--darkModeElements);
+  --boxShadow: 0 0rem 1rem rgba(0, 0, 0, 0.205);
+}
+img,
+svg {
+  vertical-align: top !important;
+}
+.header {
+background: var(--lightModeBackground);
+
+}
+
+.header a {color: var(--lightModeText);
+}
+
+@media screen and (min-width: 800px) {
+  .search-and-filter {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 90vw;
+    padding-top: 3rem;
+    margin: 0rem auto;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  form {
+    margin: 0 auto 4rem 0;
+  }
+}
+
+form {
+  width: 90%;
+  max-width: 25rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.8rem 1rem;
+  background-color: var(--lightModeElements);
+  box-shadow: 0 0.3rem 1rem #0000001a;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+form svg {
+  margin: 0 2rem;
+  max-width: 2rem;
+  color: var(--lightModeText);
+}
+form input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--lightModeElements);
+  color: var(--lightModeText);
+}
+.select-faker {
+  margin-left: 5vw;
+  margin-bottom: 4rem;
+  padding: 0.8rem 1rem;
+  background-color: var(--lightModeElements);
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  box-shadow: var(--boxShadow);
+  width: 20rem;
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.select-faker .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  color: var(--lightModeText);
+}
