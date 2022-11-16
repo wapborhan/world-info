@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "./components/Header";
 import Main from "./home/Main";
 import Details from "./home/details/Details.jsx";
+import Spinner from "./components/Spinner";
 import Footer from "./components/Footer";
 
 export default class App extends Component {
@@ -25,12 +26,28 @@ export default class App extends Component {
     this.setState({ selectedCountry: country });
   };
   render() {
+    console.log(this.state.selectedCountry);
     return (
       <Fragment>
         <Header />
         <Routes>
-          <Route path="/" element={<Main data={this.state.allcountry} />} />
-          <Route path="/details" element={<Details />} />
+          <Route
+            path="/"
+            element={
+              this.state.allcountry ? (
+                <Main
+                  data={this.state.allcountry}
+                  selectCountry={this.countrySelected}
+                />
+              ) : (
+                <Spinner />
+              )
+            }
+          />
+          <Route
+            path="/country/:id"
+            element={<Details data={this.state.selectedCountry} />}
+          />
         </Routes>
         <Footer />
       </Fragment>

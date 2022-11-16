@@ -5,6 +5,7 @@ import CountryCard from "./Card";
 import Spinner from "../components/Spinner";
 
 const Main = (props) => {
+  // console.log(props);
   return (
     <Fragment>
       <div className="container pt-5">
@@ -23,7 +24,21 @@ const Main = (props) => {
             </Button>
           </Form.Group>
         </Form>
-        {props.data ? <CountryCard data={props.data} /> : <Spinner />}
+        <div className="container">
+          <div className="row">
+            {props.data.map((item) => {
+              return (
+                <CountryCard
+                  data={item}
+                  selectCountry={() => {
+                    props.selectCountry(item);
+                  }}
+                  key={Math.random()}
+                />
+              );
+            })}
+          </div>
+        </div>
       </div>
     </Fragment>
   );
