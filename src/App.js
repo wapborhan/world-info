@@ -34,7 +34,7 @@ export default class App extends Component {
     return (
       <Fragment>
         <Header />
-        <Form />
+        {/* <Form /> */}
         <Routes>
           <Route
             path="/"

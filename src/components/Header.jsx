@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
+import { FaSun, FaMoon } from "react-icons/fa";
 
 function Header() {
   const [isDark, setDark] = useState(false);
@@ -22,9 +23,9 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link onClick={toggleDark}>
-              <span>i</span>Dark Mode
-            </Nav.Link>
+            <NavLink onClick={toggleDark}>
+              <span className="drk">{!isDark ? <FaSun /> : <FaMoon />}</span>{" "}
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

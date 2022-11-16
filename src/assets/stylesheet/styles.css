@@ -34,11 +34,27 @@ svg {
 }
 body.dark .card {
   border: 0;
-border-radius: 5px !important;
+ background: var(--lightModeElements);
+
 }
 .header a {
   color: var(--lightModeText);
 }
+span.drk
+ {
+    vertical-align: -webkit-baseline-middle;
+}
+
+table{
+background: var(--lightModeElements);
+  color: var(--lightModeText);
+}
+table td, table th, table tr{
+background: var(--lightModeElements);
+  color: var(--lightModeText);
+}
+
+
 
 @media screen and (min-width: 800px) {
   .search-and-filter {

@@ -9,10 +9,16 @@ function LeftData(props) {
   return (
     <Fragment>
       {" "}
-      <Card style={{ width: "100%" }}>
-        <Card.Img variant="top" src={item.flags.svg} />
-      </Card>
-      <table className="table table-bordered">
+      <table className="table table-bordered shadow rounded">
+        <thead>
+          <tr>
+            <th colSpan="2" className="p-0 rounded">
+              <Card style={{ width: "100%" }}>
+                <Card.Img variant="top" src={item.flags.svg} />
+              </Card>
+            </th>
+          </tr>
+        </thead>
         <thead>
           <tr>
             <th colSpan="2">Names</th>
