@@ -10,7 +10,7 @@
   --boxShadow: 0 0rem 1rem rgba(0, 0, 0, 0.116);
 }
 body {
-background: var(--lightModeBackground);
+  background: var(--lightModeBackground);
   font-family: "Hind Siliguri", sans-serif;
   font-family: "Nunito Sans", sans-serif;
 }
@@ -25,11 +25,19 @@ svg {
   vertical-align: top !important;
 }
 .header {
-background: var(--lightModeBackground);
-
+  background: var(--lightModeBackground);
 }
 
-.header a {color: var(--lightModeText);
+.card-body {
+  background: var(--lightModeElements);
+  color: var(--lightModeText);
+}
+body.dark .card {
+  border: 0;
+border-radius: 5px !important;
+}
+.header a {
+  color: var(--lightModeText);
 }
 
 @media screen and (min-width: 800px) {
