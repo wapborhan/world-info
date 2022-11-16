@@ -1,9 +1,45 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { NavLink } from "react-router-dom";
+import LeftData from "./LeftData";
+import CenterData from "./CenterData";
+import RightData from "./RightData";
 
 const Details = (props) => {
   const item = props.data;
-  console.log(props.data);
-  return <img src={item.flags.svg}></img>;
+
+  return (
+    <Fragment>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="card p-2 mb-3">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <NavLink to="/">Home</NavLink>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    {item.name.common}
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-4">
+            <LeftData data={props.data} />
+          </div>
+          <div className="col-md-4">
+            <CenterData />
+          </div>
+          <div className="col-md-4">
+            <RightData />
+          </div>
+        </div>
+      </div>
+    </Fragment>
+  );
 };
 
 export default Details;

@@ -1,28 +1,47 @@
+import { Fragment } from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 
 function LeftData(props) {
-  // console.log(props.data[0].area);
+  const item = props.data;
+  console.log(props.data);
+
   return (
-    <Card style={{ width: "100%" }}>
-      <Card.Img variant="top" src="https://flagcdn.com/w320/bd.png" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
-    </Card>
+    <Fragment>
+      {" "}
+      <Card style={{ width: "100%" }}>
+        <Card.Img variant="top" src={item.flags.svg} />
+      </Card>
+      <table className="table table-bordered">
+        <thead>
+          <tr>
+            <th colSpan="2">Names</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Common</td>
+            <td>{item.name.common}</td>
+          </tr>
+          <tr>
+            <td>Common (Native)</td>
+            <td>{/* {item.name.nativeName.ben.common} */}</td>
+          </tr>
+          <tr>
+            <td>Official</td>
+            <td>{item.name.official}</td>
+          </tr>
+          <tr>
+            <td>Official (Native)</td>
+            <td>{/* {item.name.nativeName.ben.official} */}</td>
+          </tr>
+          <tr>
+            <td>Alternative spellings</td>
+            <td>{item.name.altSpellings}</td>
+          </tr>
+        </tbody>
+      </table>
+    </Fragment>
   );
 }
 

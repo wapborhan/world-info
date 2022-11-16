@@ -6,6 +6,7 @@ import Main from "./home/Main";
 import Details from "./home/details/Details.jsx";
 import Spinner from "./components/Spinner";
 import Footer from "./components/Footer";
+import Form from "./home/Form";
 
 export default class App extends Component {
   constructor(props) {
@@ -13,13 +14,16 @@ export default class App extends Component {
     this.state = {
       allcountry: null,
       selectedCountry: null,
+      filter: "all",
     };
   }
 
   componentDidMount() {
-    axios.get("https://restcountries.com/v3.1/all").then((response) => {
-      this.setState({ allcountry: response.data });
-    });
+    axios
+      .get(`https://restcountries.com/v3.1/${this.state.filter}`)
+      .then((response) => {
+        this.setState({ allcountry: response.data });
+      });
   }
 
   countrySelected = (country) => {
@@ -30,6 +34,7 @@ export default class App extends Component {
     return (
       <Fragment>
         <Header />
+        <Form />
         <Routes>
           <Route
             path="/"
