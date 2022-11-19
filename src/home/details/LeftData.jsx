@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
 
 function LeftData(props) {
   const item = props.data;

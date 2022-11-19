@@ -30,8 +30,12 @@ const Details = (props) => {
           <div className="col-md-4">
             <LeftData data={props.data} />
           </div>
-          <div className="col-md-4">{/* <CenterData /> */}</div>
-          <div className="col-md-4">{/* <RightData /> */}</div>
+          <div className="col-md-4">
+            <CenterData data={props.data} />{" "}
+          </div>
+          <div className="col-md-4">
+            <RightData data={props.data} />
+          </div>
         </div>
       </div>
     </Fragment>

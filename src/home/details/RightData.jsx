@@ -1,42 +1,43 @@
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
+import { Fragment } from "react";
 
-function RightData() {
+function RightData(props) {
+  const item = props.data;
   return (
-    <Card style={{ width: "100%" }}>
-      <Card.Header>
-        <Card.Title>Details</Card.Title>
-      </Card.Header>
-      <Card.Body className="p-0">
-        <ListGroup variant="flush">
-          <ListGroup.Item action>
-            <div className="d-flex justify-content-between">
-              <h6>Capital</h6>
-              <h6>Dhaka</h6>
-            </div>
-          </ListGroup.Item>
-          <ListGroup.Item action variant="secondary">
-            <div className="d-flex justify-content-between">
-              <h6>Capital</h6>
-              <h6>Dhaka</h6>
-            </div>
-          </ListGroup.Item>
-          <ListGroup.Item action>
-            <div className="d-flex justify-content-between">
-              <h6>Capital</h6>
-              <h6>Dhaka</h6>
-            </div>
-          </ListGroup.Item>
-          <ListGroup.Item action variant="secondary">
-            <div className="d-flex justify-content-between">
-              <h6>Capital</h6>
-              <h6>Dhaka</h6>
-            </div>
-          </ListGroup.Item>
-        </ListGroup>
-      </Card.Body>
-    </Card>
+    <Fragment>
+      <table className="table table-bordered shadow rounded">
+        <thead>
+          <tr>
+            <th colSpan="2">Codes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ISO 3166-1 alpha-2</td>
+            {/* <td>{item.name.common}</td> */}
+          </tr>
+          <tr>
+            <td>ISO 3166-1 alpha-3</td>
+            <td>{/* {item.name.nativeName.ben.common} */}</td>
+          </tr>
+          <tr>
+            <td>ISO 3166-1 numeric</td>
+            {/* <td>{item.name.official}</td> */}
+          </tr>
+          <tr>
+            <td>International calling code</td>
+            <td>{/* {item.name.nativeName.ben.official} */}</td>
+          </tr>
+          <tr>
+            <td>ISO 4217 currency code</td>
+            <td>{item.name.altSpellings}</td>
+          </tr>{" "}
+          <tr>
+            <td>Top level domain</td>
+            <td>{item.name.altSpellings}</td>
+          </tr>
+        </tbody>
+      </table>
+    </Fragment>
   );
 }
 
