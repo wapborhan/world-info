@@ -6,7 +6,7 @@ const Footer = () => {
       <h4>
         Design By{" "}
         <a
-          className="text-decoration-none text-light"
+          className="text-decoration-none text-warning"
           href="https://www.srdreamlab.com"
           target="_BLANK"
           rel="noreferrer"
