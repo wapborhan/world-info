@@ -10,8 +10,9 @@ export default class Main extends Component {
   render() {
     return (
       <Fragment>
-        <div className="container pt-5">
-          {/* <div class="search-and-filter container">
+        <div className="main pt-100">
+          <div className="container">
+            {/* <div class="search-and-filter container">
             <form class="search-bar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -42,19 +43,20 @@ export default class Main extends Component {
               </select>
             </div>
           </div> */}
-          <div className="container">
-            <div className="row">
-              {this.props.data.map((item) => {
-                return (
-                  <CountryCard
-                    data={item}
-                    selectCountry={() => {
-                      this.props.selectCountry(item);
-                    }}
-                    key={Math.random()}
-                  />
-                );
-              })}
+            <div className="container">
+              <div className="row">
+                {this.props.data.map((item) => {
+                  return (
+                    <CountryCard
+                      data={item}
+                      selectCountry={() => {
+                        this.props.selectCountry(item);
+                      }}
+                      key={Math.random()}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

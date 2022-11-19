@@ -10,9 +10,9 @@ const Details = (props) => {
   return (
     <Fragment>
       <div className="container">
-        <div className="row pt-3">
+        <div className="row pt-100">
           <div className="col-lg-12">
-            <div className="card p-2 mt-5  mb-3">
+            <div className="card p-2   mb-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">

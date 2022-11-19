@@ -7,11 +7,10 @@ function LeftData(props) {
 
   return (
     <Fragment>
-      {" "}
-      <table className="table table-bordered shadow rounded">
+      <table className="sr table table-bordered shadow rounded">
         <thead>
-          <tr>
-            <th colSpan="2" className="p-0 rounded">
+          <tr className="border-0">
+            <th colSpan="2" className="p-0 border-0 rounded">
               <Card style={{ width: "100%" }}>
                 <Card.Img variant="top" src={item.flags.svg} />
               </Card>

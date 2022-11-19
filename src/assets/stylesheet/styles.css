@@ -13,12 +13,14 @@ body {
   background: var(--lightModeBackground);
   font-family: "Hind Siliguri", sans-serif;
   font-family: "Nunito Sans", sans-serif;
+  transition: all linear 0.3s;
 }
 body.dark {
   --lightModeText: var(--darkModeText);
   --lightModeBackground: var(--darkModeBackground);
   --lightModeElements: var(--darkModeElements);
   --boxShadow: 0 0rem 1rem rgba(0, 0, 0, 0.205);
+  transition: all linear 0.3s;
 }
 img,
 svg {
@@ -27,34 +29,36 @@ svg {
 .header {
   background: var(--lightModeBackground);
 }
-
+span.drk.icon {
+    font-size: 25px;
+}
+.pt-100{
+padding-top: 100px;}
 .card-body {
   background: var(--lightModeElements);
   color: var(--lightModeText);
 }
 body.dark .card {
   border: 0;
- background: var(--lightModeElements);
-
+  background: var(--lightModeElements);
 }
 .header a {
   color: var(--lightModeText);
 }
-span.drk
- {
-    vertical-align: -webkit-baseline-middle;
+span.drk {
+  vertical-align: -webkit-baseline-middle;
 }
 
-table{
-background: var(--lightModeElements);
+table {
+  background: var(--lightModeElements);
   color: var(--lightModeText);
 }
-table td, table th, table tr{
-background: var(--lightModeElements);
+table td,
+table th,
+table tr {
+  background: var(--lightModeElements);
   color: var(--lightModeText);
 }
-
-
 
 @media screen and (min-width: 800px) {
   .search-and-filter {
@@ -124,8 +128,6 @@ form input {
   font-size: 1.4rem;
   color: var(--lightModeText);
 }
-
-
 
 /* loader */
 .loader4 {
