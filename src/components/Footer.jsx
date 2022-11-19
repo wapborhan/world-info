@@ -5,7 +5,12 @@ const Footer = () => {
     <div className="bg-dark text-light pt-3 pb-3 text-center mt-5">
       <h4>
         Design By{" "}
-        <a href="https://www.srdreamlab.com" target="_BLANK">
+        <a
+          className="text-decoration-none text-light"
+          href="https://www.srdreamlab.com"
+          target="_BLANK"
+          rel="noreferrer"
+        >
           SR Dream Lab
         </a>
       </h4>
