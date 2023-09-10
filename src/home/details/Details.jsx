@@ -9,15 +9,18 @@ const Details = (props) => {
 
   return (
     <Fragment>
-      <div className="container">
-        <div className="row pt-100">
+      <div className="container mx-auto px-24">
+        <div className=" py-8">
           <div className="col-lg-12">
-            <div className="card p-2   mb-3">
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
+            <div className="border-2 rounded ">
+              <nav className="px-10 py-2 justify-start">
+                <ol class="flex gap-3">
                   <li class="breadcrumb-item">
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/" className="text-green-500">
+                      Home
+                    </NavLink>
                   </li>
+                  {" / "}
                   <li class="breadcrumb-item active" aria-current="page">
                     {item.name.common}
                   </li>
@@ -26,14 +29,14 @@ const Details = (props) => {
             </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-4">
+        <div className="grid lg:grid-cols-3 md:grid-cols-1 grid-cols-1 gap-7">
+          <div className="left">
             <LeftData data={props.data} />
           </div>
-          <div className="col-md-4">
+          <div className="center">
             <CenterData data={props.data} />{" "}
           </div>
-          <div className="col-md-4">
+          <div className="right">
             <RightData data={props.data} />
           </div>
         </div>

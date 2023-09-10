@@ -2,11 +2,11 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-dark text-light pt-3 pb-3 text-center mt-5">
+    <div className="text-center bg-slate-700 text-white text-2xl py-4 mt-20">
       <h4>
         Design By{" "}
         <a
-          className="text-decoration-none text-warning"
+          className="text-decoration-none text-orange-500"
           href="https://www.srdreamlab.com"
           target="_BLANK"
           rel="noreferrer"

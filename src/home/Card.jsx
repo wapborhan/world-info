@@ -1,29 +1,33 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
+
 import { NavLink } from "react-router-dom";
 
 const CountryCard = (props) => {
   const item = props.data;
 
   return (
-    <div className="col-md-3">
+    <div className="card text-center ">
       <NavLink
         to={`/country/${item.name.common}`}
         className="text-decoration-none text-dark"
         onClick={props.selectCountry}
       >
-        <Card style={{ width: "100%", marginTop: "20px" }} className="shadow ">
-          <Card.Img
+        <div
+          style={{ width: "100%" }}
+          className="shadow-sm border-2  rounded-md"
+        >
+          <img
             style={{ height: "170px", width: "100%" }}
-            variant="top"
+            className="border-b-2 p-3"
             src={item.flags.svg}
+            alt={item.name.common}
           />
-          <Card.Body>
-            <Card.Title>{item.name.common}</Card.Title>
-            <Card.Text>Region: {item.region}</Card.Text>
-            <Card.Text>Capital: {item.capital}</Card.Text>
-          </Card.Body>
-        </Card>
+          <div className="space-y-2 p-3">
+            <h2 className="text-2xl">{item.name.common}</h2>
+            <div>Region: {item.region}</div>
+            <div>Capital: {item.capital}</div>
+          </div>
+        </div>
       </NavLink>
     </div>
   );

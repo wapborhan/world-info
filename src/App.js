@@ -1,12 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { Routes, Route } from "react-router-dom";
-import axios from "axios";
 import Header from "./components/Header";
 import Main from "./home/Main";
 import Details from "./home/details/Details.jsx";
 import Spinner from "./components/Spinner";
 import Footer from "./components/Footer";
-import Form from "./home/Form";
+// import Form from "./home/Form";
 
 export default class App extends Component {
   constructor(props) {
@@ -19,10 +18,10 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(`https://restcountries.com/v3.1/${this.state.filter}`)
-      .then((response) => {
-        this.setState({ allcountry: response.data });
+    fetch(`https://restcountries.com/v3.1/${this.state.filter}`)
+      .then((response) => (response = response.json()))
+      .then((data) => {
+        this.setState({ allcountry: data });
       });
   }
 
@@ -30,7 +29,7 @@ export default class App extends Component {
     this.setState({ selectedCountry: country });
   };
   render() {
-    console.log(this.state.selectedCountry);
+    // console.log(this.state.selectedCountry);
     return (
       <Fragment>
         <Header />

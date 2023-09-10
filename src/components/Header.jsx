@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import React, { useState } from "react";
+
 import { NavLink } from "react-router-dom";
 import { FaSun, FaMoon } from "react-icons/fa";
 import LogoL from "../assets/img/logo-light.png";
@@ -16,22 +14,24 @@ function Header() {
     document.body.classList.toggle("dark");
   };
   return (
-    <Navbar className="shadow header fixed-top" expand="lg">
-      <Container>
+    <div className="container mx-auto px-24 shadow-md py-3">
+      <div className="flex justify-between items-center">
         <NavLink to="/" className="text-decoration-none">
-          <Navbar.Brand className="logo">
-            {!isDark ? <img src={LogoL} /> : <img src={LogoD} />}
-          </Navbar.Brand>
+          <div className="logo">
+            {!isDark ? (
+              <img src={LogoL} alt="Logo" />
+            ) : (
+              <img src={LogoD} alt="logo" />
+            )}
+          </div>
         </NavLink>
-        <Nav className="ms-auto">
+        <div className="ms-auto">
           <NavLink onClick={toggleDark}>
             <span className="drk icon">{!isDark ? <FaSun /> : <FaMoon />}</span>{" "}
           </NavLink>
-        </Nav>
-        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav"></Navbar.Collapse> */}
-      </Container>
-    </Navbar>
+        </div>
+      </div>
+    </div>
   );
 }
 
