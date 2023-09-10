@@ -14,6 +14,8 @@ export default class App extends Component {
       allcountry: null,
       selectedCountry: null,
       filter: "all",
+      region: null,
+      data: null,
     };
   }
 
@@ -23,17 +25,27 @@ export default class App extends Component {
       .then((data) => {
         this.setState({ allcountry: data });
       });
+
+    fetch(`https://restcountries.com/v3.1/region/${this.state.region}`)
+      .then((response) => (response = response.json()))
+      .then((data) => {
+        this.setState({ data: data });
+      });
   }
 
   countrySelected = (country) => {
     this.setState({ selectedCountry: country });
   };
+
+  handleFilter = (data) => {
+    this.setState({ region: data });
+  };
   render() {
-    // console.log(this.state.selectedCountry);
+    console.log(this.state.data);
     return (
       <Fragment>
         <Header />
-        {/* <Form /> */}
+        {/* <Form handleFilter={this.handleFilter} /> */}
         <Routes>
           <Route
             path="/"
